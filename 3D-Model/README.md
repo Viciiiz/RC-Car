@@ -4,7 +4,7 @@
 </head>
 <body>
 - Find the model file under <b>Model OBJ file</b>.<br>
-- Find the printable files under <b>printable</b>. Some components needto be printed multiple times:<br>
+- Find the printable files under <b>printable</b>. Some components need to be printed multiple times:<br>
 &emsp;1. front-wheel-cadre-cover: print 4 <br>
 &emsp;2. front-wheel-cadre: print 2 <br>
 &emsp;3. front-wheel-traversal: print 2 <br>
