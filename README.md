@@ -14,7 +14,7 @@
             - 1 DC motor controller (don't have one, so I will use 2 <a href="https://www.amazon.com/dp/B00LW15D1M/ref=sspa_dk_detail_0?psc=1&pd_rd_i=B00LW15D1M&pd_rd_w=jDJTM&pf_rd_p=91afecf5-8b2e-41e2-9f11-dc6992c6eaa1&pd_rd_wg=M46up&pf_rd_r=HRQH9XYXTSA7DWSNZW1W&pd_rd_r=adc71aa7-ad4b-4938-b580-8bd6cfd14cce&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExVDhOTTFNMDFSSzFQJmVuY3J5cHRlZElkPUEwMDU5MTY2MzJQR1pHWkNMSlVKWiZlbmNyeXB0ZWRBZElkPUEwMDcxODQ0Mkk5UzBaVUNHWUI2TyZ3aWRnZXROYW1lPXNwX2RldGFpbCZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=" target="_blank">relays</a> instead)<br>
             - 1 Step-down voltage regulator 6V (<a href="https://www.pololu.com/product/2882" target="_blank">Maestro D24V150F6</a>)<br><br>
             - 8 bearings (<a href="https://www.amazon.com/gp/product/B07C6FL8TW/ref=ppx_yo_dt_b_asin_title_o03_s01?ie=UTF8&psc=1" target="_blank">(8mm x 22mm x 7mm)</a>)<br><br>
-        The Arduino will be programmed in C++.
+        The Raspberry Pi's GPIO pinswill be programmed in Python, receiving commands from the command line using PHP.
     </body>
 
 </html>
