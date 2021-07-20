@@ -15,20 +15,23 @@ GPIO.setup(servo_switch, GPIO.OUT)
 
 # servo initial setup
 my_pwm = GPIO.PWM(servo_wheel, 50)
-my_pwm.start((75/18.0)+2.0)  # servo at 90 degrees
+# my_pwm.start((75/18.0)+2.0)  # servo at 90 degrees
+my_pwm.start((1/18.0) * 90 + 2)
 
 my_pwm_switch = GPIO.PWM(servo_switch, 50)
-my_pwm_switch.start((75/18.0)+2.0)  # servo at 90 degrees
+# my_pwm_switch.start((75/18.0)+2.0)  # servo at 90 degrees
+my_pwm_switch.start((1/18.0) * 90 + 2)
 
 
 # function to change the direction of the servo between 3 states: 20, 90, and 160 degrees
 def dir_servo(servo, angle):
-    if angle == 20:
-        servo.start((70/18.0)+2.0)  # servo at 20 degrees
-    elif angle == 90:
-        servo.start((75/18.0)+2.0)  # servo at 90 degrees
-    elif angle == 160:
-        servo.start((80/18.0)+2.0)  # servo at 160 degrees
+    # if angle == 20:
+    #      servo.start((70/18.0)+2.0)  # servo at 20 degrees
+    # elif angle == 90:
+    #     servo.start((75/18.0)+2.0)  # servo at 90 degrees
+    # elif angle == 160:
+    #     servo.start((80/18.0)+2.0)  # servo at 160 degrees
+    servo.start((1/18.0) * angle + 2)
 
 
 # to move forward, servo at 160 degree
@@ -71,34 +74,40 @@ def move_forward_left():
     left()
     forward_state()
     straight()
+    stop_state()
 
 
 def move_forward_straight():
     straight()
     forward_state()
+    stop_state()
 
 
 def move_forward_right():
     right()
     forward_state()
     straight()
+    stop_state()
 
 
 def move_backward_left():
     left()
     backward_state()
     straight()
+    stop_state()
 
 
 def move_backward_straight():
     straight()
     backward_state()
+    stop_state()
 
 
 def move_backward_right():
     right()
     backward_state()
     straight()
+    stop_state()
 
 
 def direct_car(dir):
