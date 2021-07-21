@@ -8,6 +8,7 @@
 &emsp;1. front-wheel-cadre-cover: print 4 (Filament: PLA) <br>
 &emsp;2. front-wheel-cadre: print 2 (Filament: PLA)<br>
 &emsp;3. front-wheel-traversal: print 2 (Filament: PLA)<br>
+&emsp;4. servo-switch: print 1 (Filament: PLA)<br>
 &emsp;4. wheel-in: print 4 (Filament: PLA)<br>
 &emsp;5. wheel-out: print 4 (Filament: NinjaFlex, or other flexible filament; this is needed to have better grip on the ground).
 </body>
