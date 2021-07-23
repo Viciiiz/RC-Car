@@ -7,11 +7,11 @@ GPIO.setmode(GPIO.BCM)
 
 servo_wheel = 27  # physical pin 13
 servo_switch = 18  # physical pin 12
-# relay = 17 #physical pin 11
+relay = 17  # physical pin 11
 
 GPIO.setup(servo_wheel, GPIO.OUT)
 GPIO.setup(servo_switch, GPIO.OUT)
-# GPIO.setup(relay,GPIO.OUT)
+GPIO.setup(relay, GPIO.OUT)
 
 # servo initial setup
 my_pwm = GPIO.PWM(servo_wheel, 50)
@@ -21,6 +21,14 @@ my_pwm_switch = GPIO.PWM(servo_switch, 50)
 my_pwm_switch.start((1/18.0) * 90 + 2)  # servo at 90 degrees
 
 
+# function to close relay and enable movement
+def relay_control(state):
+    if state:
+        GPIO.output(relay, True)
+    else:
+        GPIO.output(relay, False)
+
+
 # function to change the direction of the servo between 3 states: 20, 90, and 160 degrees
 def dir_servo(servo, angle):
     servo.start((1/18.0) * angle + 2)
@@ -28,18 +36,23 @@ def dir_servo(servo, angle):
 
 # to move forward, servo at 160 degree
 def forward_state():
+    relay_control(True)
     dir_servo(my_pwm_switch, 160)
     time.sleep(1)
+    relay_control(False)
 
 
 # to move backward, servo at 20 degree
 def backward_state():
+    relay_control(True)
     dir_servo(my_pwm_switch, 20)
     time.sleep(1)
+    relay_control(False)
 
 
 # to stop the car, servo at 90 degree
 def stop_state():
+    relay_control(False)
     dir_servo(my_pwm_switch, 90)
     time.sleep(1)
 
